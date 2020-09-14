@@ -8,266 +8,46 @@
 
 // SETTINGS
 // Contient les variables sur les polices, les définitions de couleurs, les définitions de  grandeurs,   etc.
-
+@import "settings/colors";
+@import "settings/font";
 
 
 
 // GENERIC
 // Permet de réinitialiser les CSS et de changer le modèle de boîte en box-sizing: border-box
+@import "normalize";
+@import "generic/reset";
 
 
 
 
 // ELEMENTS
 // Modification des styles généraux de la page. Ce sont les styles qui seront généralement hérités par les éléments de la page.
-
+@import "elements/link";
+@import "elements/titres";
+@import "elements/body";
 
 
 // COMPONENTS
 // Composants d'interface utilisateur spécifiques.
 // C’est là que la majorité de notre travail a lieu.
-
-
+@import "components/header";
+@import "components/hero";
+@import "components/cartes";
+@import "components/section-interet";
+@import "components/section-citation";
+@import "components/footer";
 
 
 // UTILITIES
 // Utilitaires et classes auxiliaires avec possibilité de remplacer tout ce qui précède, par exemple masquer les éléments de la page
 
 
-/*---------------------- Settings ----------------------*/
-
-/* LES VARIABLES CSS ICI */
-:root {
-  --font-primaire: 'Cardo', serif;
-  --font-secondaire: 'Bungee Shade', cursive;
-
-  --couleur-principale: #a7029a;
-  --degrade-principal: linear-gradient(35.74deg, rgba(167, 2, 154, 0.7) -2.92%, rgba(167, 2, 154, 0) 106.13%);
-
-  --couleur-blanc: #ffffff;
-  --couleur-noir: #000000;
-}
-
-/*---------------------- Generic ----------------------*/
-
-/* Mettre la ligne universelle pour le box-sizing */
-*, *::before, *::after{
-  box-sizing:border-box;
-}
-
-a {
-  font-family: var(--font-primaire);
-  font-size: 1.5rem;
-  color: var(--couleur-blanc);
-
-  text-decoration: none;
-}
-
-a:hover {
-  color: var(--couleur-principale);
-
-  text-decoration: underline;
-}
-
-h1 {
-  font-family: var(--font-secondaire);
-  font-size: 2.25rem;
-  color: var(--couleur-blanc);
-
-  margin: 0;
-  padding: 15px 0;
-}
-
-h2 {
-  font-family: var(--font-secondaire);
-  font-size: 5rem;
-  color: var(--couleur-blanc);
-}
-
-h3 {
-  margin: 0;
-
-  font-weight: bold;
-  font-size: 2.5rem;
-  text-transform: uppercase;
-}
-
-/*---------------------- Elements ----------------------*/
-body {
-  margin: 0;
-
-  font-family: var(--font-primaire);
-  font-size: 1.125rem;
-}
-
-.conteneur {
-  max-width: 1140px;
-  margin: 0 auto;
-}
 
 
-/*---------------------- Components ----------------------*/
-/*--- HEADER ---*/
-.header-principal {
-  background-color: var(--couleur-noir);
-  width: 100%;
-
-  position: fixed;
-  top: 0;
-  left: 0;
-  z-index: 999;
-}
 
 
-/*--- HERO ---*/
-.hero {
-  height: 75vh;
-  background-color: var(--couleur-noir);
 
-  position: relative;
-}
 
-.hero video{
-  height: 100%;
-  width: 100%;
 
-  object-fit: cover;
-
-  opacity: 0.5;
-}
-
-.hero h2 {
-  padding: 180px 0 0;
-  margin: 0;
-}
-
-.hero p {
-  font-size: 1.5rem;
-  color: var(--couleur-blanc);
-
-  padding: 0 0 24px;
-  margin: 0;
-}
-
-.hero .content {
-  width: 100%;
-  height: 100%;
-
-  position: absolute;
-  top: 0;
-  left: 0;
-  z-index: 2;
-
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-}
-
-.hero::after {
-  content: "";
-
-  background: var(--degrade-principal);
-
-  width: 100%;
-  height: 100%;
-
-  position: absolute;
-  top: 0;
-  left: 0;
-  z-index: 1;
-}
-
-/*--- INTERET ---*/
-.interet {
-  background-image: url("../images/bg-interet.jpg");
-  background-attachment: fixed;
-  background-size: cover;
-
-  padding: 66px 0 80px;
-}
-
-.interet h3 {
-  text-align: center;
-}
-
-.interet .conteneur > p {
-  font-size: 1.125rem;
-  text-align: center;
-}
-
-.interet .cartes {
-  display: flex;
-  justify-content: space-between;
-  flex-wrap: wrap;
-
-}
-
-.interet .carte {
-  width: 31%;
-
-  background: var(--couleur-blanc);
-  box-shadow: 0 0 5px rgba(0, 0, 0, 0.5);
-
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-
-  padding: 20px;
-  margin: 20px 0;
-}
-
-.interet img {
-  width: 151px;
-  height: 151px;
-}
-
-.interet h4 {
-  font-weight: bold;
-  font-size: 1.125em;
-  text-align: center;
-  text-transform: uppercase;
-
-  margin: 20px 0;
-}
-
-/*--- CITATION ---*/
-.citation {
-  background-image: url("../images/bg-citation.jpg");
-  background-attachment: fixed;
-  background-size: cover;
-}
-
-.citation h3 {
-  color: var(--couleur-blanc);
-
-  padding: 100px 0 0;
-}
-
-.citation p {
-  color: var(--couleur-blanc);
-  padding: 0 0 100px;
-  margin-bottom: 0;
-}
-
-/*--- FOOTER --*/
-.footer-principal {
-  background: var(--couleur-noir);
-
-  padding: 60px 0;
-  margin: 0;
-
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-
-.footer-principal p {
-  color: var(--couleur-blanc);
-}
-
-.footer-principal a {
-  font-size: 1.125rem;
-}
-
-/*---------------------- Utilities ----------------------*/
 

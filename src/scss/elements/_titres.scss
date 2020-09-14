@@ -1,0 +1,22 @@
+h1 {
+  font-family: var(--font-secondaire);
+  font-size: 2.25rem;
+  color: var(--couleur-blanc);
+
+  margin: 0;
+  padding: 15px 0;
+}
+
+h2 {
+  font-family: var(--font-secondaire);
+  font-size: 5rem;
+  color: var(--couleur-blanc);
+}
+
+h3 {
+  margin: 0;
+
+  font-weight: bold;
+  font-size: 2.5rem;
+  text-transform: uppercase;
+}

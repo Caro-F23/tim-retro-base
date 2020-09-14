@@ -1,0 +1,19 @@
+.footer-principal {
+  background: var(--couleur-noir);
+
+  padding: 60px 0;
+  margin: 0;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  p {
+    color: var(--couleur-blanc);
+  }
+
+  a {
+    font-size: 1.125rem;
+  }
+}
+
